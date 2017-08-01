@@ -1,0 +1,33 @@
+button, input, select {
+    line-height: 30px;
+    height: 30px;
+    border: 0;
+}
+
+input, select {
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+}
+
+button {
+    box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
+}
+
+input, select, button {
+    background: #FFF;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding-left: $spacing-x-small;
+    padding-right: $spacing-x-small;
+}
+
+.u-textarea__block {
+    width: 100%;
+    min-height: 400px;
+}
+
+@each $alias, $value in $color-variants {
+    .c-button__#{$alias} {
+        background-color: $value;
+        color: white;
+    }
+}

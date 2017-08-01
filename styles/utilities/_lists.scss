@@ -1,0 +1,21 @@
+ul, ol, dl {
+    list-style-position: inside;
+}
+.u-list__unstyled {
+    list-style: none;
+}
+
+.u-list__inline {
+    list-style: none;
+    li {
+        float: left;
+        margin: 0 2px;
+    }
+}
+
+.u-list__inline-right {
+    list-style: none;
+    li {
+        float: right;
+    }
+}

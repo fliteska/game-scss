@@ -1,0 +1,9 @@
+.u-badge {
+    border-radius: 5px;
+    background: rgba(255,255,255,0.4);
+    @include boxshadow();
+    color: white;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+}

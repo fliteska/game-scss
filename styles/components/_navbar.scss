@@ -1,0 +1,77 @@
+.c-navbar {
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: $text;
+    .c-navbar-title {
+        display: inline-block;
+        font-weight: bold;
+        padding: $spacing-x-small;
+        text-transform: uppercase;
+    }
+    a {
+        color: $text;
+    }
+    ul {
+        padding: 0;
+        li {
+            display: inline-block;
+            padding: $spacing-x-small;
+            &.toggle {
+                display: none;
+                i {
+                    color: $white;
+                }
+            }
+        }
+    }
+    @include mq($until: medium) {
+        ul {
+            text-align: center;
+            li {
+                display: block;
+                width: 100%;
+            }
+            &.hidden {
+                li {
+                    display: none;
+                }
+            }
+
+            li.toggle {
+                display: block;
+            }
+            li.brand {
+                display: none;
+            }
+        }
+    }
+    span {
+        cursor: pointer;
+    }
+}
+
+.c-navbar__clear {
+    background: transparent;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+.c-navbar__fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+@include mq($from: medium) {
+    .c-navbar-block {
+        text-align: center;
+        .c-navbar-title {
+            display: block;
+        }
+        ul {
+            display: block;
+            li {
+                display: block;
+            }
+        }
+    }
+}

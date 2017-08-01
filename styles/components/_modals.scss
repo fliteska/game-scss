@@ -1,0 +1,50 @@
+.c-modal {
+    background: $black;
+    background: rgba(0,0,0,0.5);
+    color: $text;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    .c-modal-container {
+        margin: auto;
+        margin-top: 50px;
+        background-color: #fff;
+        box-shadow: 0 2px 3px rgba(10, 10, 10, 0.75);
+        position: relative;
+        padding: 0;
+        outline: 0;
+        width: 500px;
+        @include mq($until: small) {
+            margin: 10px;
+            width: auto;
+        }
+        .c-modal-header {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            .c-modal-close {
+                float: right;
+                padding: $spacing-small;
+            }
+            .c-modal-title {
+                font-weight: bold;
+                padding: $spacing-small;
+            }
+        }
+        .c-modal-body {
+            padding: $spacing-x-small;
+        }
+        .c-modal-footer {
+            box-shadow: 0 -1px 2px rgba(10, 10, 10, 0.1);
+            font-weight: bold;
+            padding: $spacing-small;
+        }
+    }
+}
+            .u-divider {
+                background: rgba(0,0,0,0.1);
+                height: 1px;
+                margin-left: -$spacing-x-small;
+                margin-right: -$spacing-x-small;
+            }

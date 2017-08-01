@@ -1,0 +1,82 @@
+body {
+    color: $text;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6, p, ul, blockquote {
+    padding: $spacing-small;
+    margin: 0;
+}
+
+$heading-sizes: (
+    null: $heading,
+    __x-small: $heading-x-small,
+    __small: $heading-small,
+    __large: $heading-large,
+    __x-large: $heading-x-large
+) !default;
+
+@each $alias, $value in $heading-sizes {
+    .u-heading#{$alias} {
+        font-size: $value;
+    }
+}
+
+.u-text__small {
+    font-size: 75%;
+}
+
+.u-text__bold {
+    font-weight: bolder;
+}
+
+.u-text__emphasis {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+$text-transforms: (
+    lowercase,
+    uppercase,
+    capitalize,
+    "full-width",
+    none
+);
+
+$alignments: (
+    center,
+    left,
+    right,
+    justify
+);
+
+.u-text {
+    @each $key in $text-transforms {
+        &__#{$key} {
+            text-transform: $key;
+        }
+    }
+    @each $key in $alignments {
+        &__#{$key} {
+            text-align: $key;
+        }
+    }
+    @each $label, $width in $mq-breakpoints {
+        @include mq($until: #{$label}) {
+            @each $key in $alignments {
+                &__#{$key}-#{$label} {
+                    text-align: #{$key};
+                }
+            }
+        }
+    }
+}

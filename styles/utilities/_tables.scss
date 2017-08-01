@@ -1,0 +1,35 @@
+table {
+    border-collapse: collapse;
+}
+.u-table {
+    width: 100%;
+    min-width: 100%;
+    tr {
+        th {
+            font-weight: bold;
+        }
+        th, td {
+            vertical-align: middle;
+        }
+    }
+}
+
+.u-table__responsive {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.u-table__striped {
+    tbody {
+        tr:nth-child(odd) {
+            background: rgba(0,0,0,0.1);
+        }
+    }
+}
+
+.u-table__bordered {
+    border: 1px solid rgba(0,0,0,0.1);
+    th, td {
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+}

@@ -1,0 +1,36 @@
+$spacing-directions: (
+    null,
+    -top,
+    -right,
+    -bottom,
+    -left,
+);
+
+$spacing-properties: (
+    padding,
+    margin
+);
+
+$spacing-sizes: (
+    null: $spacing,
+    __x-small: $spacing-x-small,
+    __small: $spacing-small,
+    __large: $spacing-large,
+    __x-large: $spacing-x-large
+) !default;
+
+@each $property in $spacing-properties {
+    @each $dir in $spacing-directions {
+        $all: null;
+        @if ($dir == null) { $all: -all; }
+
+        @each $size, $value in $spacing-sizes {
+            .u-#{$property}#{$dir}#{$all}#{$size} {
+                #{$property}#{$dir}: $value !important;
+            }
+        }
+        .u-#{$property}#{$dir}#{$all}-none {
+            #{$property}#{$dir}: 0 !important;
+        }
+    }
+}
