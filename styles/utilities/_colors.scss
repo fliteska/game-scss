@@ -1,8 +1,8 @@
 @each $alias, $value in $color-variants {
     .b-#{$alias} {
-        color: $value;
+        color: $value !important;
     }
     .bg-#{$alias} {
-        background-color: $value;
+        background-color: $value !important;
     }
 }
